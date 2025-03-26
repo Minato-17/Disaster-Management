@@ -1,7 +1,52 @@
 .map-container {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    height: 2200px; 
-}
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .windy-map {
+    flex: 3; /* 80% of the container width */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .partition {
+    width: 5px;
+    background-color: black;
+    height: 100%;
+  }
+  
+  .osm-container {
+    flex: 2; /* 20% of the container width */
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stack map and table vertically */
+  }
+  
+  .osm-map {
+    flex: 0 0 83%; /* 83% of the osm-container height */
+    height: 83%; /* Explicit height for iframe */
+  }
+  
+  .table-container {
+    flex: 0 0 17%; /* 17% of the osm-container height */
+    height: 17%;
+    overflow: auto; /* Scroll if table content exceeds height */
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse; /* Clean table borders */
+  }
+  
+  .table-container th,
+  .table-container td {
+    border: 1px solid #ccc; /* Light border for visibility */
+    padding: 8px; /* Spacing inside cells */
+    text-align: center;
+  }
+  
+  .table-container th {
+    background-color: #f2f2f2; /* Light gray header */
+  }
