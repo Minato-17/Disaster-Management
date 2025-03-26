@@ -58,9 +58,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   position: absolute;
-  right: 20px; /* Small gap from right corner */
-  top: 700px;
-  left: 1300px; /* 20px limit from the left */
+  right: 50px; /* Small gap from right corner */
+  top: 850px;
+  left: 1500px; /* 20px limit from the left */
   font-family: Arial, sans-serif;
 }
 

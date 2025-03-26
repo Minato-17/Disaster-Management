@@ -5,6 +5,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 import joblib
+import json  # Add this import for structured output
 
 # Load the datasets
 historic_file_path = "historic_earthquake_data.csv"
@@ -78,7 +79,14 @@ current_data["Earthquake_Occurs"] = np.where(current_data["Predicted_Likelihood_
 # Select top 5 earthquakes with the highest magnitude
 top_earthquakes = current_data.sort_values(by="Predicted_Magnitude", ascending=False).head(5)
 
-# Display predictions
-print("Mean Absolute Error - Likelihood Score:", mae_likelihood)
-print("Mean Absolute Error - Magnitude:", mae_magnitude)
-print(top_earthquakes[["Latitude", "Longitude", "Predicted_Likelihood_Score", "Predicted_Magnitude", "Earthquake_Occurs"]])
+# Output the results as JSON
+output = {
+    "mae_likelihood": mae_likelihood,
+    "mae_magnitude": mae_magnitude,
+    "top_earthquakes": top_earthquakes[[
+        "Latitude", "Longitude", "Predicted_Likelihood_Score", 
+        "Predicted_Magnitude", "Earthquake_Occurs"
+    ]].to_dict(orient="records")
+}
+
+print(json.dumps(output))
