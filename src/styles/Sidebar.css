@@ -1,0 +1,33 @@
+.sidebar {
+    width: 200px;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .sidebar h3 {
+    margin: 0 0 1rem 0;
+  }
+  
+  .layer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .layer-list li {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .layer-list li:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .layer-list li.active {
+    background-color: #007bff;
+    color: white;
+  }

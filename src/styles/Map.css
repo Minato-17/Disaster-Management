@@ -1,0 +1,7 @@
+.map-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 2200px; 
+}
